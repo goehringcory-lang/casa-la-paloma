@@ -322,6 +322,102 @@ section { position: relative; }
 .g-f { grid-column: span 8; aspect-ratio: 16/9; }
 .g-g { grid-column: span 4; aspect-ratio: 3/4; }
 
+/* ========== GALLERY CAROUSEL ========== */
+.gcar {
+  margin-top: 8px;
+}
+.gcar__stage {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.gcar__frame {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 16/10;
+  background: var(--cream-soft);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.gcar__frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.gcar__frame img.is-active {
+  opacity: 1;
+}
+.gcar__caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 28px 20px 18px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.gcar__count {
+  opacity: 0.85;
+  white-space: nowrap;
+}
+.gcar__label {
+  opacity: 0.95;
+}
+.gcar__arrow {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--cream-soft);
+  color: var(--moss-deep);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.gcar__arrow:hover {
+  background: var(--moss-deep);
+  color: var(--cream);
+  transform: scale(1.05);
+}
+.gcar__arrow:focus-visible {
+  outline: 2px solid var(--moss-deep);
+  outline-offset: 3px;
+}
+.gcar__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+.gcar__dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--ink-soft);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.gcar__dot:hover { background: var(--ink-soft); }
+.gcar__dot.is-active {
+  background: var(--moss-deep);
+  border-color: var(--moss-deep);
+  transform: scale(1.15);
+}
+
 /* ========== GROUNDS ========== */
 .grounds {
   padding: 140px 0;
@@ -708,6 +804,11 @@ section { position: relative; }
   .journey__steps { grid-template-columns: 1fr 1fr; }
   .gallery__grid { gap: 10px; }
   .g-a, .g-b, .g-c, .g-d, .g-e, .g-f, .g-g { grid-column: span 12; }
+  .gcar__stage { gap: 8px; }
+  .gcar__frame { aspect-ratio: 4/3; }
+  .gcar__arrow { width: 42px; height: 42px; }
+  .gcar__arrow svg { width: 22px; height: 22px; }
+  .gcar__caption { font-size: 10px; padding: 22px 14px 14px; gap: 10px; }
   .footer { flex-direction: column; gap: 16px; text-align: center; }
   .tweaks-panel { right: 12px; bottom: 12px; width: calc(100% - 24px); max-width: 300px; }
 }
