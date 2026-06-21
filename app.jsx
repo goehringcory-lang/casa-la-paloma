@@ -113,7 +113,7 @@ function App() {
     <>
       {/* ============= HERO ============= */}
       <section className="hero" ref={heroRef} id="top">
-        <div className="hero__img" style={{ backgroundImage: "url('assets/casa-hero.jpg')" }} />
+        <div className="hero__img" style={{ backgroundImage: "url('assets/hero-house-dusk.jpg')" }} />
         <div className="hero__veil" />
         <div className="hero__grain" />
 
@@ -181,7 +181,7 @@ function App() {
           />
           <div className="grounds__split">
             <Reveal>
-              <Frame className="g-a" label="FRONT ELEVATION · DUSK" src="assets/casa-hero.jpg" />
+              <Frame className="g-a" label="FRONT ELEVATION · DUSK" src="assets/hero-house-dusk.jpg" alt="The house at dusk, seen from the front garden" />
             </Reveal>
             <Reveal delay={150}>
               <div className="grounds__copy">
@@ -224,16 +224,13 @@ function App() {
             note="Open-air, shaded by a tiled roof, built board by board. A selection of images from inside and around the property."
           />
           <div className="gallery__grid">
-            <Reveal><Frame className="g-a" label="01 · FRONT GARDEN" src="assets/casa-hero.jpg" /></Reveal>
-            <Reveal delay={80}><Frame className="g-b" label="02 · OPEN-AIR LIVING ROOM" /></Reveal>
-            <Reveal delay={120}><Frame className="g-c" label="03 · BEDROOM" /></Reveal>
-            <Reveal delay={160}><Frame className="g-d" label="04 · KITCHEN" /></Reveal>
-            <Reveal delay={200}><Frame className="g-e" label="05 · CASITA EXTERIOR" /></Reveal>
-            <Reveal delay={80}><Frame className="g-f" label="06 · VIEW OF CONCEPCIÓN FROM THE GARDEN" /></Reveal>
-            <Reveal delay={140}><Frame className="g-g" label="07 · WORKSHOP INTERIOR" /></Reveal>
-          </div>
-          <div style={{ marginTop: 24, fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--ink-soft)", opacity: 0.6 }}>
-            Placeholders shown where final photos are still to be added.
+            <Reveal><Frame className="g-a" label="01 · FRONT GARDEN" src="assets/front-garden.jpg" alt="Front of the house with garden and Saint Francis statue" /></Reveal>
+            <Reveal delay={80}><Frame className="g-b" label="02 · OPEN-AIR LIVING ROOM" src="assets/living-room-doors.jpg" alt="Open-air living room looking out to the garden doors" /></Reveal>
+            <Reveal delay={120}><Frame className="g-c" label="03 · BEDROOM" src="assets/bedroom-main.jpg" alt="Main bedroom with mosquito net and wood dresser" /></Reveal>
+            <Reveal delay={160}><Frame className="g-d" label="04 · KITCHEN" src="assets/kitchen.jpg" alt="Tiled kitchen with breakfast bar" /></Reveal>
+            <Reveal delay={200}><Frame className="g-e" label="05 · CASITA EXTERIOR" src="assets/casita-door.jpg" alt="Casita entrance door" /></Reveal>
+            <Reveal delay={80}><Frame className="g-f" label="06 · VIEW OF CONCEPCIÓN FROM THE GARDEN" src="assets/volcano-concepcion.jpg" alt="Volcán Concepción seen from the property" /></Reveal>
+            <Reveal delay={140}><Frame className="g-g" label="07 · WORKSHOP INTERIOR" src="assets/workshop.jpg" alt="Workshop interior with tools and workbench" /></Reveal>
           </div>
         </div>
       </section>
