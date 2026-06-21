@@ -223,15 +223,17 @@ function App() {
             title={<><em>La casa</em>, room by room.</>}
             note="Open-air, shaded by a tiled roof, built board by board. A selection of images from inside and around the property."
           />
-          <div className="gallery__grid">
-            <Reveal><Frame className="g-a" label="01 · FRONT GARDEN" src="assets/front-garden.jpg" alt="Front of the house with garden and Saint Francis statue" /></Reveal>
-            <Reveal delay={80}><Frame className="g-b" label="02 · OPEN-AIR LIVING ROOM" src="assets/living-room-doors.jpg" alt="Open-air living room looking out to the garden doors" /></Reveal>
-            <Reveal delay={120}><Frame className="g-c" label="03 · BEDROOM" src="assets/bedroom-main.jpg" alt="Main bedroom with mosquito net and wood dresser" /></Reveal>
-            <Reveal delay={160}><Frame className="g-d" label="04 · KITCHEN" src="assets/kitchen.jpg" alt="Tiled kitchen with breakfast bar" /></Reveal>
-            <Reveal delay={200}><Frame className="g-e" label="05 · CASITA EXTERIOR" src="assets/casita-door.jpg" alt="Casita entrance door" /></Reveal>
-            <Reveal delay={80}><Frame className="g-f" label="06 · VIEW OF CONCEPCIÓN FROM THE GARDEN" src="assets/volcano-concepcion.jpg" alt="Volcán Concepción seen from the property" /></Reveal>
-            <Reveal delay={140}><Frame className="g-g" label="07 · WORKSHOP INTERIOR" src="assets/workshop.jpg" alt="Workshop interior with tools and workbench" /></Reveal>
-          </div>
+          <Reveal>
+            <Gallery items={[
+              { label: "01 · FRONT GARDEN", src: "assets/front-garden.jpg", alt: "Front of the house with garden and Saint Francis statue" },
+              { label: "02 · OPEN-AIR LIVING ROOM", src: "assets/living-room-doors.jpg", alt: "Open-air living room looking out to the garden doors" },
+              { label: "03 · BEDROOM", src: "assets/bedroom-main.jpg", alt: "Main bedroom with mosquito net and wood dresser" },
+              { label: "04 · KITCHEN", src: "assets/kitchen.jpg", alt: "Tiled kitchen with breakfast bar" },
+              { label: "05 · CASITA EXTERIOR", src: "assets/casita-door.jpg", alt: "Casita entrance door" },
+              { label: "06 · VIEW OF CONCEPCIÓN FROM THE GARDEN", src: "assets/volcano-concepcion.jpg", alt: "Volcán Concepción seen from the property" },
+              { label: "07 · WORKSHOP INTERIOR", src: "assets/workshop.jpg", alt: "Workshop interior with tools and workbench" },
+            ]} />
+          </Reveal>
         </div>
       </section>
 
