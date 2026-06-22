@@ -1,24 +1,330 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Casa La Paloma · A home on Ometepe Island, Nicaragua</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa La Paloma · Beachfront Home for Sale · Ometepe Island, Nicaragua</title>
+<meta name="description" content="Casa La Paloma, a fully furnished beachfront home on Lake Nicaragua, Ometepe Island. Main house, casita, workshop, plunge pool, private beach, fruit trees, fiber optic internet. One kilometer from Moyogalpa. $120,000 USD, negotiable. Featured on House Hunters International.">
+<meta property="og:title" content="Casa La Paloma · Beachfront Home for Sale on Ometepe Island">
+<meta property="og:description" content="A fully furnished lakefront homestead with private beach, casita, workshop, and plunge pool. One kilometer from Moyogalpa. $120,000 USD, negotiable.">
+<meta property="og:image" content="images/hero-house-dusk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dusk:#20303F;
+  --dusk-deep:#16222E;
+  --teja:#B5502C;
+  --marigold:#D98A2B;
+  --plaster:#F6EEE2;
+  --plaster-deep:#EFE2CE;
+  --ink:#2B2622;
+  --lake:#5E8E8B;
+  --white:#FFFDF8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Karla',sans-serif;color:var(--ink);background:var(--plaster);line-height:1.65;font-size:17px}
+h1,h2,h3{font-family:'Marcellus',serif;font-weight:400;line-height:1.15}
+img{display:block;max-width:100%}
+a{color:var(--teja)}
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+.eyebrow{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:var(--white);
+  background:linear-gradient(rgba(22,34,46,.18) 35%, rgba(22,34,46,.78) 88%), url('images/hero-house-dusk.jpg') center 38%/cover no-repeat}
+.hero-inner{width:100%;max-width:1080px;margin:0 auto;padding:6rem 1.4rem 4.2rem}
+.hero .eyebrow{color:var(--marigold);margin-bottom:.9rem}
+.hero h1{font-size:clamp(2.9rem,9vw,5.6rem);letter-spacing:.02em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.hero p.lede{font-size:clamp(1.05rem,2.6vw,1.35rem);max-width:34em;margin:1rem 0 1.6rem;font-weight:300}
+.price-chip{display:inline-block;background:var(--teja);color:var(--white);font-weight:700;letter-spacing:.06em;
+  padding:.55rem 1.1rem;border-radius:3px;margin-bottom:1.6rem;font-size:1.02rem}
+.hero-cta a{display:inline-block;margin:0 .7rem .7rem 0;padding:.78rem 1.5rem;border-radius:3px;text-decoration:none;font-weight:700;letter-spacing:.04em;font-size:.95rem}
+.cta-solid{background:var(--white);color:var(--dusk)}
+.cta-ghost{border:1.5px solid rgba(255,253,248,.75);color:var(--white)}
+.hero-cta a:hover{transform:translateY(-1px)}
+
+/* VOLCANO DIVIDER */
+.volcano-divider{display:block;width:100%;height:74px;background:var(--dusk-deep);position:relative;overflow:hidden}
+.volcano-divider svg.scene{display:block;width:100%;height:100%;position:relative;z-index:2}
+.ferry{position:absolute;bottom:9px;left:-8%;width:62px;height:30px;z-index:3;
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,.45));
+  animation:ferry-cross 34s linear infinite}
+.ferry .hull-group{animation:ferry-bob 3.2s ease-in-out infinite}
+@keyframes ferry-cross{from{left:-8%}to{left:104%}}
+@keyframes ferry-bob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(1.6px) rotate(-1.2deg)}}
+
+/* BADGE STRIP */
+.badge-strip{background:var(--dusk);color:var(--white);text-align:center;padding:1.5rem 1.4rem}
+.badge-strip p{font-family:'Marcellus',serif;font-size:clamp(1.05rem,2.6vw,1.3rem)}
+.badge-strip span{color:var(--marigold)}
+
+/* GENERIC SECTION */
+section{padding:4.6rem 1.4rem}
+.wrap{max-width:1080px;margin:0 auto}
+.narrow{max-width:680px;margin:0 auto}
+section h2{font-size:clamp(1.9rem,5vw,2.7rem);margin-bottom:.4rem}
+.section-eyebrow{color:var(--teja);margin-bottom:.7rem;display:block}
+
+/* LETTER */
+.letter{background:var(--white)}
+.letter-card{position:relative;padding-top:1rem}
+.letter p{margin-bottom:1.15rem;font-size:1.06rem}
+.letter p:first-of-type::first-letter{font-family:'Marcellus',serif;font-size:4.4rem;float:left;line-height:.82;
+  padding:.28rem .65rem 0 0;color:var(--teja)}
+.letter .signoff{font-family:'Marcellus',serif;font-size:1.25rem;margin-top:1.6rem}
+.letter .signoff small{display:block;font-family:'Karla',sans-serif;font-size:.86rem;color:#6e645b;margin-top:.3rem;letter-spacing:.02em}
+
+/* FACTS */
+.facts{background:var(--plaster)}
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:1.1rem;margin-top:2.2rem}
+.fact{background:var(--white);border-top:3px solid var(--marigold);padding:1.3rem 1.3rem 1.2rem;border-radius:0 0 4px 4px}
+.fact h3{font-size:1.12rem;margin-bottom:.35rem;color:var(--dusk)}
+.fact p{font-size:.95rem;color:#52483f}
+.fact:nth-child(3n+2){border-top-color:var(--teja)}
+.fact:nth-child(3n){border-top-color:var(--lake)}
+
+/* GALLERY */
+.gallery{background:var(--white)}
+.gallery h3{font-size:1.35rem;color:var(--dusk);margin:2.6rem 0 1.1rem;padding-bottom:.4rem;border-bottom:1px solid var(--plaster-deep)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.9rem}
+.grid figure{position:relative;overflow:hidden;border-radius:4px;cursor:pointer;background:var(--plaster-deep)}
+.grid img{width:100%;height:230px;object-fit:cover;transition:transform .45s ease}
+.grid figure:hover img{transform:scale(1.04)}
+.grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:.9rem .8rem .55rem;font-size:.8rem;color:var(--white);
+  background:linear-gradient(transparent,rgba(22,34,46,.82));letter-spacing:.02em}
+.grid figure.tall img{height:330px}
+
+/* LIGHTBOX */
+#lightbox{position:fixed;inset:0;background:rgba(15,22,30,.94);display:none;align-items:center;justify-content:center;z-index:50;padding:2rem;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lightbox img{max-width:100%;max-height:88vh;border-radius:4px}
+#lightbox p{position:absolute;bottom:1.2rem;left:0;right:0;text-align:center;color:var(--white);font-size:.9rem}
+
+/* VIDEO */
+.video{background:var(--dusk);color:var(--white)}
+.video .section-eyebrow{color:var(--marigold)}
+.video-frame{position:relative;padding-top:56.25%;margin-top:2rem;border-radius:6px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* PRACTICAL */
+.practical{background:var(--plaster)}
+.practical .narrow p{margin-bottom:1.1rem}
+.map-frame{margin-top:2.2rem;border-radius:6px;overflow:hidden;border:1px solid var(--plaster-deep)}
+.map-frame iframe{display:block;width:100%;height:380px;border:0}
+
+/* CONTACT */
+.contact{background:var(--dusk-deep);color:var(--white);text-align:center}
+.contact h2{color:var(--white)}
+.contact .price{font-family:'Marcellus',serif;font-size:clamp(2rem,6vw,3rem);color:var(--marigold);margin:.8rem 0 .2rem}
+.contact .terms{color:#b8c4cf;margin-bottom:2rem}
+.contact a.mailbtn{display:inline-block;background:var(--teja);color:var(--white);text-decoration:none;font-weight:700;
+  letter-spacing:.05em;padding:.95rem 2.2rem;border-radius:3px;font-size:1.05rem}
+.contact a.mailbtn:hover{background:#c75e36}
+.contact .note{margin-top:1.6rem;font-size:.9rem;color:#9fadb9;max-width:34em;margin-left:auto;margin-right:auto}
+
+footer{background:var(--dusk-deep);color:#7d8b97;text-align:center;font-size:.82rem;padding:1.4rem;border-top:1px solid rgba(255,255,255,.08)}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .grid img{transition:none}
+  .ferry,.ferry .hull-group{animation:none}
+  .ferry{left:18%}
+}
+@media (max-width:640px){
+  .grid img{height:200px}
+  .grid figure.tall img{height:260px}
+  section{padding:3.4rem 1.1rem}
+}
+</style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel" src="components.jsx"></script>
-  <script type="text/babel" src="journey.jsx"></script>
-  <script type="text/babel" src="location.jsx"></script>
-  <script type="text/babel" src="tweaks.jsx"></script>
-  <script type="text/babel" src="app.jsx"></script>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Ometepe Island · Lake Nicaragua</span>
+    <h1>Casa La Paloma</h1>
+    <p class="lede">A fully furnished beachfront home and gardens at the foot of Volcán Concepción, one kilometer from the port town of Moyogalpa.</p>
+    <div class="price-chip">$120,000 USD · Negotiable · Sold Furnished</div>
+    <div class="hero-cta">
+      <a class="cta-solid" href="#gallery">See the house</a>
+      <a class="cta-ghost" href="#video">Watch the video tour</a>
+    </div>
+  </div>
+</header>
+
+<div class="volcano-divider" aria-hidden="true">
+  <svg class="ferry" viewBox="0 0 60 28">
+    <g class="hull-group">
+      <path d="M4,18 L56,18 L50,26 L9,26 Z" fill="#C0532F"/>
+      <rect x="14" y="10" width="26" height="8" rx="1.5" fill="#FFFDF8"/>
+      <rect x="24" y="4" width="10" height="6" rx="1" fill="#5E8E8B"/>
+      <circle cx="18" cy="14" r="1.5" fill="#20303F"/>
+      <circle cx="24" cy="14" r="1.5" fill="#20303F"/>
+      <circle cx="30" cy="14" r="1.5" fill="#20303F"/>
+      <circle cx="36" cy="14" r="1.5" fill="#20303F"/>
+      <rect x="27" y="0" width="1.4" height="4" fill="#FFFDF8"/>
+      <path d="M28.4,0 L34,1.6 L28.4,3.2 Z" fill="#D98A2B"/>
+    </g>
+  </svg>
+  <svg class="scene" viewBox="0 0 1200 74" preserveAspectRatio="none">
+    <path d="M0,74 L0,60 L330,60 L520,10 L558,18 L598,8 L705,38 L1200,60 L1200,74 Z" fill="#20303F"/>
+  </svg>
+</div>
+
+<div class="badge-strip">
+  <p>As featured on HGTV's <span>House Hunters International</span></p>
+</div>
+
+<section class="letter" id="letter">
+  <div class="narrow letter-card">
+    <span class="eyebrow section-eyebrow">A letter from the owners</span>
+    <h2>Ten years on the island</h2>
+    <br>
+    <p>We came to Ometepe for an adventure and stayed for a decade. We built Casa La Paloma on the shore of Lake Nicaragua, where the fishing boats slide past at dawn and Volcán Concepción wears a cloud like a hat most mornings. We planted the gardens, hung the hammocks, and filled the kitchen with color.</p>
+    <p>This was never a vacation rental. It was our home. We helped build school libraries down the road, worked alongside the Puesta del Sol women's cooperative, and learned that a dead end road on a Nicaraguan island is the best address in the world if what you want is birdsong, mangoes falling in the yard, and neighbors who wave.</p>
+    <p>We are in our seventies now, and grandchildren in California are calling us north. The house is ready for its next chapter, and so is the beach, the plunge pool, the workshop, and the pineapples coming up by the path. We hope whoever buys it loves it the way we have.</p>
+    <p class="signoff">Debbie and Ron Goehring
+      <small>Debbie is the author of The Monkey Lady's Gift, a memoir about this house and this island. <a href="https://themonkeyladysgift.com" target="_blank" rel="noopener">themonkeyladysgift.com</a></small>
+    </p>
+  </div>
+</section>
+
+<section class="book" id="book" style="background:var(--plaster-deep)">
+  <div class="narrow" style="text-align:center">
+    <span class="eyebrow section-eyebrow">The house with its own memoir</span>
+    <h2>The Monkey Lady's Gift</h2>
+    <br>
+    <p>Casa La Paloma is the setting of Debbie's published memoir, <em>The Monkey Lady's Gift</em>, the true story of the decade she and Ron spent building a life on Ometepe. The beach in these photos, the gardens, the neighbors, the volcano: they are all in the book. Few houses come with three hundred pages of proof of how good life here can be.</p>
+    <p style="margin-top:1.2rem"><a href="https://themonkeyladysgift.com" target="_blank" rel="noopener"><strong>Read about the book at themonkeyladysgift.com</strong></a></p>
+  </div>
+</section>
+
+<section class="facts" id="facts">
+  <div class="wrap">
+    <span class="eyebrow section-eyebrow">The property</span>
+    <h2>What you are buying</h2>
+    <div class="fact-grid">
+      <div class="fact"><h3>Private beach frontage</h3><p>Direct lakeshore frontage on Lake Nicaragua with your own beach access. Swim, kayak, or watch the sunset from the sand.</p></div>
+      <div class="fact"><h3>Half a manzana, fully fenced</h3><p>A gated, end of road half manzana with mature shade, stone garden paths, and full irrigation throughout the grounds.</p></div>
+      <div class="fact"><h3>Main house, furnished</h3><p>Sold fully furnished and move-in ready, with a wraparound covered porch built for rocking chairs and lake breezes.</p></div>
+      <div class="fact"><h3>Casita and workshop</h3><p>A separate casita and a dedicated workshop give you guest space, studio space, or rental income potential.</p></div>
+      <div class="fact"><h3>Plunge pool</h3><p>A private plunge pool at the back of the main house for cooling off in the tropical afternoon.</p></div>
+      <div class="fact"><h3>Fruit trees everywhere</h3><p>Mango, banana, pineapple, and more. The grounds produce fruit year round.</p></div>
+      <div class="fact"><h3>Fiber optic internet</h3><p>Fast, reliable fiber internet makes remote work and video calls easy from the island.</p></div>
+      <div class="fact"><h3>Two water sources</h3><p>City water plus a private well with a gravity fed water tower, so the taps keep running no matter what.</p></div>
+      <div class="fact"><h3>One kilometer to town</h3><p>A short walk or bike ride to Moyogalpa's restaurants, markets, banks, and the ferry to the mainland.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <span class="eyebrow section-eyebrow">Photo tour</span>
+    <h2>Walk through Casa La Paloma</h2>
+
+    <h3>The grounds and the lake</h3>
+    <div class="grid">
+      <figure class="tall"><img src="images/front-garden.jpg" loading="lazy" alt="Front garden and stone walkway at golden hour"><figcaption>The front garden at golden hour</figcaption></figure>
+      <figure class="tall"><img src="images/garden-path.jpg" loading="lazy" alt="Stone path through flowering gardens toward the lake"><figcaption>The stone path to the lake</figcaption></figure>
+      <figure class="tall"><img src="images/brick-patio.jpg" loading="lazy" alt="Circular brick patio under coconut palms"><figcaption>The circular patio under the palms</figcaption></figure>
+      <figure><img src="images/plunge-pool-casita.jpg" loading="lazy" alt="The plunge pool at the back of the main house"><figcaption>The plunge pool at the back of the main house</figcaption></figure>
+      <figure><img src="images/beach-from-water.jpg" loading="lazy" alt="The private beach and shoreline seen from the lake"><figcaption>The beach, seen from the water</figcaption></figure>
+      <figure><img src="images/volcano-concepcion.jpg" loading="lazy" alt="Volcán Concepción capped in cloud above the treeline"><figcaption>Volcán Concepción from the road</figcaption></figure>
+      <figure><img src="images/sunset-beach.jpg" loading="lazy" alt="Sunset over Lake Nicaragua from the beach"><figcaption>Sunset from the beach</figcaption></figure>
+      <figure><img src="images/palms-sunset.jpg" loading="lazy" alt="Palms silhouetted at sunset over the lake"><figcaption>Evening through the palms</figcaption></figure>
+      <figure class="tall"><img src="images/lake-fishing-boat.jpg" loading="lazy" alt="A fishing boat on Lake Nicaragua under dramatic clouds"><figcaption>Morning on the lake</figcaption></figure>
+      <figure class="tall"><img src="images/pineapple-bloom.jpg" loading="lazy" alt="A pineapple blooming in the garden"><figcaption>Pineapple coming up by the path</figcaption></figure>
+      <figure class="tall"><img src="images/banana-flower.jpg" loading="lazy" alt="Bananas and a banana flower on the property"><figcaption>Bananas in the yard</figcaption></figure>
+    </div>
+
+    <h3>Inside the house</h3>
+    <div class="grid">
+      <figure><img src="images/kitchen.jpg" loading="lazy" alt="Large open kitchen with hardwood cabinets, tile counters, and breakfast bar"><figcaption>The kitchen, with hardwood cabinets and breakfast bar</figcaption></figure>
+      <figure><img src="images/kitchen-detail.jpg" loading="lazy" alt="Kitchen with gas range, refrigerator, and hand painted mural"><figcaption>Gas range, refrigerator, and the mural</figcaption></figure>
+      <figure><img src="images/living-room.jpg" loading="lazy" alt="Living room with local art, bookshelves, and bamboo furniture"><figcaption>The living room</figcaption></figure>
+      <figure class="tall"><img src="images/living-room-doors.jpg" loading="lazy" alt="Living area opening through double screen doors to the porch"><figcaption>Double doors to the porch</figcaption></figure>
+      <figure class="tall"><img src="images/porch.jpg" loading="lazy" alt="Covered porch with rocking chairs and dining table"><figcaption>The porch, made for rocking chairs</figcaption></figure>
+      <figure><img src="images/hammock-porch.jpg" loading="lazy" alt="Covered porch with hammock and dining table overlooking the garden"><figcaption>The hammock porch</figcaption></figure>
+      <figure><img src="images/bedroom-main.jpg" loading="lazy" alt="Bedroom with hardwood wardrobe and dresser"><figcaption>Bedroom with hardwood wardrobe</figcaption></figure>
+      <figure class="tall"><img src="images/shower.jpg" loading="lazy" alt="Walk-in mosaic tile shower inside the main house"><figcaption>Walk-in shower in the main house</figcaption></figure>
+      <figure class="tall"><img src="images/office-den.jpg" loading="lazy" alt="Office and guest den with futon daybed and built-in hardwood desk"><figcaption>Office and guest den with built-in desk</figcaption></figure>
+    </div>
+
+    <h3>The casita, workshop, and systems</h3>
+    <div class="grid">
+      <figure class="tall"><img src="images/casita-door.jpg" loading="lazy" alt="The door to Casita de Tortuga with its turtle mosaic"><figcaption>The door to Casita de Tortuga</figcaption></figure>
+      <figure><img src="images/bedroom-two.jpg" loading="lazy" alt="Casita bedroom with tile floor and garden views"><figcaption>Casita bedroom</figcaption></figure>
+      <figure class="tall"><img src="images/bathroom.jpg" loading="lazy" alt="Casita bathroom with tiled walk-in shower"><figcaption>Casita bathroom</figcaption></figure>
+      <figure><img src="images/workshop-exterior.jpg" loading="lazy" alt="The two story workshop with covered work area and upstairs balcony"><figcaption>The two story workshop</figcaption></figure>
+      <figure><img src="images/workshop.jpg" loading="lazy" alt="The workshop with tool benches and storage"><figcaption>The workshop</figcaption></figure>
+      <figure><img src="images/studio-room.jpg" loading="lazy" alt="The upstairs room above the workshop"><figcaption>The upstairs room above the workshop</figcaption></figure>
+      <figure class="tall"><img src="images/water-tower.jpg" loading="lazy" alt="Elevated private water storage tank"><figcaption>Private well and elevated water tank</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="video" id="video">
+  <div class="wrap">
+    <span class="eyebrow section-eyebrow">Video tour</span>
+    <h2>See it in motion</h2>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/cgu5X1sv4R4" title="Casa La Paloma video tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="practical" id="practical">
+  <div class="narrow">
+    <span class="eyebrow section-eyebrow">Good to know</span>
+    <h2>Buying here, and getting here</h2>
+    <br>
+    <p><strong>Foreigners can own property in Nicaragua.</strong> Non-citizens hold titled property in their own name, the same as locals. Casa La Paloma has clear title with all documents in order, and we recommend every buyer work with a Nicaraguan attorney to handle the purchase, which is standard practice and surprisingly affordable.</p>
+    <p><strong>Getting to Ometepe is part of the charm.</strong> Ferries run many times daily from San Jorge on the mainland, about an hour across the lake, arriving in Moyogalpa just one kilometer from the house. Managua's international airport is roughly two hours from San Jorge by car.</p>
+    <p><strong>The setting is authentic island life.</strong> The house sits at the end of a quiet dead end road in a friendly local community. It suits a buyer who wants real Nicaragua, not a gated compound: fresh fruit, lake swims, fiber internet, and town close enough to walk to.</p>
+    <div class="map-frame">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-85.82%2C11.38%2C-85.42%2C11.66&amp;layer=mapnik&amp;marker=11.54%2C-85.70" title="Map of Ometepe Island with Moyogalpa marked" loading="lazy"></iframe>
+    </div>
+    <p style="font-size:.85rem;color:#6e645b;margin-top:.6rem;text-align:center">Ometepe Island in Lake Nicaragua. The marker shows Moyogalpa, one kilometer from Casa La Paloma. The map loads when the page is online.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--marigold)">For sale by owner</span>
+    <h2>Come see Casa La Paloma</h2>
+    <div class="price">$120,000 USD</div>
+    <p class="terms">Negotiable · Sold fully furnished · Showings by appointment</p>
+    <a class="mailbtn" href="mailto:mygypsytoes@gmail.com?subject=Casa%20La%20Paloma%20inquiry">Email us at mygypsytoes@gmail.com</a>
+    <p class="terms" style="margin-top:1.4rem">Or contact our agent Sam Bauer on WhatsApp: <a href="https://wa.me/50586963728" style="color:var(--marigold)">+505 8696 3728</a></p>
+    <p class="note">We are happy to answer questions, share more photos, arrange a video walkthrough, or schedule a visit when you are on the island.</p>
+  </div>
+</section>
+
+<footer>Casa La Paloma · Moyogalpa, Ometepe Island, Nicaragua</footer>
+
+<div id="lightbox" role="dialog" aria-label="Enlarged photo">
+  <img src="" alt="">
+  <p></p>
+</div>
+
+<script>
+const lb = document.getElementById('lightbox');
+const lbImg = lb.querySelector('img');
+const lbCap = lb.querySelector('p');
+document.querySelectorAll('.grid figure').forEach(f => {
+  f.addEventListener('click', () => {
+    const img = f.querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = f.querySelector('figcaption').textContent;
+    lb.classList.add('open');
+  });
+});
+lb.addEventListener('click', () => lb.classList.remove('open'));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
 </body>
 </html>
